@@ -1,11 +1,12 @@
-function flattenObject(obj, parent, res = {}) {
-    for(let key in obj) {
-        let propName = parent ? parent + '.' + key : key;
-        if(typeof obj[key] == 'object') {
-            flattenObject(obj[key], propName, res);
-        } else {
-            res[propName] = obj[key];
+let nestedObject = {
+    a: 1,
+    b: {
+        c: 2,
+        d: {
+            e: 3,
+            f: {
+                g: 4
+            }
         }
     }
-    return res;
-}
+};
